@@ -1,8 +1,7 @@
 
 import Context from "./Context"
 import Header from "./Header/Header"
-import Main from "./Main/Main"
-
+import MainContainer from "./Main/MainContainer"
 
 function App() {
  
@@ -11,7 +10,7 @@ function App() {
     <>
     <Context>
       <Header/>
-      <Main />
+      <MainContainer />
     </Context>
       
     </>
