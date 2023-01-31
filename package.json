@@ -1,4 +1,5 @@
 {
+  "homepage": "https://seraphf2p.github.io/My_Portifolio/",
   "name": "cv",
   "private": true,
   "version": "0.0.0",
@@ -6,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
@@ -21,6 +24,7 @@
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.13",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "react-icons": "^4.7.1",
