@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --text: 255, 255, 255;
+    --text-hover: 77, 77, 223;
+    --text-muted: 107, 70, 193;
+    --text-inverted: 107, 70, 193;
+    --btn-accent: 107, 70, 193;
+    --btn-accent-hover: 107, 70, 193;
+    --btn-muted: 107, 70, 193;
+    --btn-fill: 107, 70, 193;
+    --bg: 77, 77, 223;
+    --bg-fill: 229, 229, 247;
+    --bg-gradiant: 97, 97, 253;
+    --border: 235, 235, 235;
+    --border-fill: 77, 77, 223;
+    --stroke: 255, 0, 0;
+  }
+}
+#root {
+  @apply h-screen;
+  background-image: radial-gradient(rgb(var(--bg)) 0.5px, transparent 0.5px),
+    radial-gradient(rgb(var(--bg)) 0.5px, rgb(var(--bg-fill)) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.menu_item {
+  @apply relative animate-fade-up cursor-pointer capitalize hover:text-hover;
+}
+.menu_item.active {
+  @apply text-hover before:absolute;
+}
+.menu_item.active::before {
+  @apply absolute -bottom-2 left-0 h-[2px] w-0
+   animate-expand bg-skin-fill transition-[width];
+}
+
+.img_wrapper {
+  @apply relative w-full max-w-[240px] overflow-hidden rounded-full;
+}
+.info{
+  @apply text-black text-2xl  px-4 py-2 capitalize;
+}
+
+.section {
+  @apply relative mx-auto flex h-screen max-w-3xl 
+  items-center backdrop-blur-lg;
+}
+.snaps-y-container {
+  @apply snap-y  snap-mandatory overflow-y-scroll scroll-smooth;
+}
+.snaps-y-container > * {
+  @apply snap-start;
+}
+circle.skill {
+  fill: none;
+  stroke-width: 20px;
+  stroke-dasharray: 472;
+  stroke-dashoffset: 472;
+}
+
+.burger_btn {
+  @apply relative h-6 w-10 p-1;
+}
+
+.btn_line {
+  @apply absolute top-0 left-0 -z-10 h-1 w-full rounded-sm bg-black;
+  transform-origin: center center;
+  transition: transform 1s linear, width 1s linear, background 1s;
+}
+
+.cipedBg-right {
+  clip-path: polygon(19% 0%, 100% 1%, 100% 100%, 19% 100%, 0% 50%);
+}
+.cipedBg-left {
+  clip-path: polygon(0% 0%, 81% 0%, 100% 50%, 81% 100%, 0% 100%);
+}
+.cipedBg-top {
+  clip-path: polygon(0% 30%, 0% 100%, 100% 100%, 100% 30%, 50% 0%);
+}
+.clipMenuStart {
+  clip-path: circle(0% at calc(100% - 40px) 40px);
+}
+.clipMenuEnd {
+  clip-path: circle(200% at 100% 0);
+}
+.text-mode-v-rl {
+  writing-mode: vertical-rl;
+}
+* {
+  font-family: serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  transition: color 0.3s linear, background 0.3s linear;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1rem;
+}
+.remove_scroll_bar {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.remove_scroll_bar::-webkit-scrollbar {
+  display: none;
+}
+
+.v_hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* const background = document.getElementById("background");
+const text = document.getElementById("text");
+const threshold = 0.5; // threshold for determining if background is light or dark
+
+function updateTextColor() {
+  const backgroundColor = getComputedStyle(background).getPropertyValue("background-color");
+  const luminance = getLuminance(backgroundColor);
+  
+  if (luminance < threshold) {
+    text.style.color = "white";
+  } else {
+    text.style.color = "black";
+  }
+}
+
+function getLuminance(color) {
+  const colorValues = color.match(/\d+/g);
+  const r = colorValues[0] / 255;
+  const g = colorValues[1] / 255;
+  const b = colorValues[2] / 255;
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return luminance;
+}
+
+updateTextColor(); */
